@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Say No To Drugs</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+
+    <script src="https://unpkg.com/split-type"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap");
+
+      #quote {
+        font-family: "Spicy Rice", serif;
+      }
+
+      body {
+        cursor: none;
+      }
+      [animate] .char {
+        overflow: hidden;
+        display: inline-block;
+      }
+
+      #ball-cursor {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.8); /* you can change color */
+        transform: translate(-50%, -50%);
+        mix-blend-mode: difference;
+      }
+
+      .hover-target:hover ~ #ball-cursor {
+        transform: translate(-50%, -50%) scale(2);
+      }
+
+      .loader-path {
+        stroke-dasharray: 100;
+        stroke-dashoffset: 100;
+      }
+    </style>
+  </head>
+  <body class="min-h-dvh max-w-[100dvw]">
+    <div
+      id="ball-cursor"
+      class="pointer-events-none fixed top-0 left-0 z-[9999]"
+    ></div>
+
+    <section class="h-screen w-dvw flex items-center justify-center">
+      <div
+        class="h-[calc(100vh-2rem)] w-[calc(100vw-2rem)] shadow-xl rounded-2xl overflow-hidden relative"
+      >
+        <div
+          class="w-20 hover:w-1/5 transition-all duration-300 flex items-center justify-center h-20 absolute right-0 bg-white rounded-bl-2xl z-10"
+        >
+          Menu<svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 9h16.5m-16.5 6.75h16.5"
+            />
+          </svg>
+        </div>
+
+        <!-- Centered quote container -->
+        <div
+          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center z-20"
+        >
+          <h1
+            id="quote"
+            class="text-white text-6xl font-bold drop-shadow-2xl overflow-hidden hover-target"
+          >
+            <span animate class="block">Choose Life.</span>
+            <span animate class="block">Not Drugs.</span>
+          </h1>
+        </div>
+
+        <video
+          loop
+          autoplay
+          muted
+          class="w-full h-full object-cover touch-none"
+        >
+          <source
+            src="./assets/Understanding the risks of mixing drugs (_30) (online-video-cutter.com) (1).mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+    </section>
+
+    <section class="w-full py-16 px-4 md:px-8 bg-black">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Card Template -->
+          <div
+            class="card p-6 rounded-xl border border-white/20 bg-white/10 backdrop-blur-md shadow-lg hover:shadow-white/10 transition-shadow text-white"
+          >
+            <div class="flex items-center gap-4 mb-4">
+              <div class="p-3 bg-white/10 rounded-full">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 text-white"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-4xl font-bold text-white">8500+</h3>
+            </div>
+            <h4 class="text-xl font-semibold">Drug-Related Arrests</h4>
+            <p class="text-white/80 mt-2">Over the past year</p>
+          </div>
+
+          <div
+            class="card p-6 rounded-xl border border-white/20 bg-white/10 backdrop-blur-md shadow-lg hover:shadow-white/10 transition-shadow text-white"
+          >
+            <div class="flex items-center gap-4 mb-4">
+              <div class="p-3 bg-white/10 rounded-full">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 text-white"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-4xl font-bold text-white">200+</h3>
+            </div>
+            <h4 class="text-xl font-semibold">Awareness Programs</h4>
+            <p class="text-white/80 mt-2">Conducted statewide</p>
+          </div>
+
+          <div
+            class="card p-6 rounded-xl border border-white/20 bg-white/10 backdrop-blur-md shadow-lg hover:shadow-white/10 transition-shadow text-white"
+          >
+            <div class="flex items-center gap-4 mb-4">
+              <div class="p-3 bg-white/10 rounded-full">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 text-white"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-4xl font-bold text-white">50+</h3>
+            </div>
+            <h4 class="text-xl font-semibold">Rehabilitation Centers</h4>
+            <p class="text-white/80 mt-2">Working with us</p>
+          </div>
+
+          <div
+            class="card p-6 rounded-xl border border-white/20 bg-white/10 backdrop-blur-md shadow-lg hover:shadow-white/10 transition-shadow text-white"
+          >
+            <div class="flex items-center gap-4 mb-4">
+              <div class="p-3 bg-white/10 rounded-full">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 text-white"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-4xl font-bold text-white">75%</h3>
+            </div>
+            <h4 class="text-xl font-semibold">Reduction in Drug Cases</h4>
+            <p class="text-white/80 mt-2">In target areas</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="w-full px-4 py-8 bg-black">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[200px] md:auto-rows-[300px]">
+        <!-- Top-left: wide horizontal image (spans 2 cols) -->
+        <div class="col-span-1 md:col-span-2 row-span-1">
+          <img src="/path-to-image-1.jpg" alt="Forest road" class="w-full h-full object-cover rounded-xl" />
+        </div>
+    
+        <!-- Top-right: tall image -->
+        <div class="col-span-1 row-span-1">
+          <img src="/path-to-image-2.jpg" alt="Foggy forest" class="w-full h-full object-cover rounded-xl" />
+        </div>
+    
+        <!-- Bottom-left: small house image -->
+        <div class="col-span-1 row-span-1">
+          <img src="/path-to-image-3.jpg" alt="House" class="w-full h-full object-cover rounded-xl" />
+        </div>
+    
+        <!-- Bottom-center: dark forest landscape -->
+        <div class="col-span-1 row-span-1">
+          <img src="/path-to-image-4.jpg" alt="Forest trail" class="w-full h-full object-cover rounded-xl" />
+        </div>
+    
+        <!-- Bottom-right: mountain and river image -->
+        <div class="col-span-1 row-span-1">
+          <img src="/path-to-image-5.jpg" alt="River valley" class="w-full h-full object-cover rounded-xl" />
+        </div>
+      </div>
+    </section>
+    
+
+    <!-- <section
+      class="w-dvw min-h-screen bg-black grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-6"
+    >
+      <div
+        class="h-[500px] bg-white/10 backdrop-blur-md rounded-xl border border-white/20 shadow-xl p-4 text-white"
+      >
+        Card 1
+      </div>
+      <div
+        class="h-[500px] bg-white/10 backdrop-blur-md rounded-xl border border-white/20 shadow-xl p-4 text-white"
+      >
+        Card 2
+      </div>
+      <div
+        class="h-[500px] bg-white/10 backdrop-blur-md rounded-xl border border-white/20 shadow-xl p-4 text-white"
+      >
+        Card 3
+      </div>
+      <div
+        class="h-[500px] bg-white/10 backdrop-blur-md rounded-xl border border-white/20 shadow-xl p-4 text-white"
+      >
+        Card 4
+      </div>
+    </section> -->
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Split text into characters
+        const split = new SplitType("[animate]", {
+          types: "lines, words, chars",
+          tagName: "span",
+        });
+
+        // Animate characters
+        gsap.from("[animate] .char", {
+          y: "110%",
+          opacity: 1,
+          rotationZ: "10",
+          duration: 1.55,
+          ease: "elastic.out",
+          stagger: 0.2,
+          delay: 0.3,
+        });
+      });
+
+      const cursor = document.getElementById("ball-cursor");
+
+      let mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+      let pos = { x: mouse.x, y: mouse.y };
+
+      gsap.set(cursor, { x: pos.x, y: pos.y });
+
+      window.addEventListener("mousemove", (e) => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+      });
+
+      gsap.ticker.add(() => {
+        // Smooth follow effect
+        pos.x += (mouse.x - pos.x) * 0.15;
+        pos.y += (mouse.y - pos.y) * 0.15;
+        gsap.set(cursor, { x: pos.x, y: pos.y });
+      });
+
+      window.addEventListener("mousedown", () => {
+        gsap.to("#ball-cursor", { scale: 1.5, duration: 0.2 });
+      });
+
+      window.addEventListener("mouseup", () => {
+        gsap.to("#ball-cursor", { scale: 1, duration: 0.2 });
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        gsap.from(".card", {
+          opacity: 0,
+          scale: 0.8,
+          duration: 0.6,
+          ease: "back.out(1.7)",
+          stagger: 0.2,
+        });
+      });
+    </script>
+  </body>
+</html>
