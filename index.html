@@ -19,6 +19,11 @@
       body {
         cursor: none;
       }
+
+      body::-webkit-scrollbar {
+        display: none;
+      }
+
       [animate] .char {
         overflow: hidden;
         display: inline-block;
@@ -211,34 +216,55 @@
     </section>
 
     <section class="w-full px-4 py-8 bg-black">
-      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[200px] md:auto-rows-[300px]">
+      <div
+        class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[200px] md:auto-rows-[300px]"
+      >
         <!-- Top-left: wide horizontal image (spans 2 cols) -->
         <div class="col-span-1 md:col-span-2 row-span-1">
-          <img src="/path-to-image-1.jpg" alt="Forest road" class="w-full h-full object-cover rounded-xl" />
+          <img
+            src="/path-to-image-1.jpg"
+            alt="Forest road"
+            class="w-full h-full object-cover rounded-xl"
+          />
         </div>
-    
+
         <!-- Top-right: tall image -->
         <div class="col-span-1 row-span-1">
-          <img src="/path-to-image-2.jpg" alt="Foggy forest" class="w-full h-full object-cover rounded-xl" />
+          <img
+            src="/path-to-image-2.jpg"
+            alt="Foggy forest"
+            class="w-full h-full object-cover rounded-xl"
+          />
         </div>
-    
+
         <!-- Bottom-left: small house image -->
         <div class="col-span-1 row-span-1">
-          <img src="/path-to-image-3.jpg" alt="House" class="w-full h-full object-cover rounded-xl" />
+          <img
+            src="/path-to-image-3.jpg"
+            alt="House"
+            class="w-full h-full object-cover rounded-xl"
+          />
         </div>
-    
+
         <!-- Bottom-center: dark forest landscape -->
         <div class="col-span-1 row-span-1">
-          <img src="/path-to-image-4.jpg" alt="Forest trail" class="w-full h-full object-cover rounded-xl" />
+          <img
+            src="/path-to-image-4.jpg"
+            alt="Forest trail"
+            class="w-full h-full object-cover rounded-xl"
+          />
         </div>
-    
+
         <!-- Bottom-right: mountain and river image -->
         <div class="col-span-1 row-span-1">
-          <img src="/path-to-image-5.jpg" alt="River valley" class="w-full h-full object-cover rounded-xl" />
+          <img
+            src="/path-to-image-5.jpg"
+            alt="River valley"
+            class="w-full h-full object-cover rounded-xl"
+          />
         </div>
       </div>
     </section>
-    
 
     <!-- <section
       class="w-dvw min-h-screen bg-black grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-6"
